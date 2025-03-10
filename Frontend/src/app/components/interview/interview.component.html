@@ -1,0 +1,21 @@
+<h1>Welcome to AI Interview Analysis!</h1>
+<div class="container">
+  <div class="form-group">
+    <label>Question:</label>
+    <input [(ngModel)]="question" />
+  </div>
+
+  <div class="form-group">
+    <label>Candidate's Response:</label>
+    <input [(ngModel)]="response" />
+  </div>
+
+  <button (click)="analyzeResponse()" class="button">Analyze</button>
+
+  <div *ngIf="result" class="result">
+    <h3>Analysis Result</h3>
+    <p><strong>Correctness:</strong> {{ result.correctness }}%</p>
+    <p><strong>Sentiment:</strong> {{ result.sentiment }}</p>
+    <p><strong>Keywords:</strong> {{ result.keywords.join(", ") }}</p>
+  </div>
+</div>
